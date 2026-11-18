@@ -1,0 +1,153 @@
+/* Shared styles for every page. */
+
+:root {
+  --lib-green: #244c40;
+  --lib-green-dark: #18382e;
+  --lib-cream: #f7f5f0;
+  --lib-text: #243b35;
+  --lib-border: #d9dfd9;
+  --lib-available: #2e7d32;
+  --lib-borrowed: #5f6b66;
+  --lib-red: #b42318;
+  --lib-red-bg: #fdecea;
+  --lib-orange: #b54708;
+  --lib-orange-bg: #fff4e5;
+  --lib-font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--lib-cream);
+  color: var(--lib-text);
+  font-family: var(--lib-font);
+}
+
+main {
+  flex: 1;
+}
+
+.site-header,
+.site-footer {
+  background: var(--lib-green);
+  color: #fff;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+/* Buttons */
+.btn-primary {
+  --bs-btn-bg: var(--lib-green);
+  --bs-btn-border-color: var(--lib-green);
+  --bs-btn-hover-bg: var(--lib-green-dark);
+  --bs-btn-hover-border-color: var(--lib-green-dark);
+  --bs-btn-active-bg: var(--lib-green-dark);
+  --bs-btn-active-border-color: var(--lib-green-dark);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--lib-green);
+  --bs-btn-border-color: var(--lib-green);
+  --bs-btn-hover-bg: var(--lib-green);
+  --bs-btn-hover-border-color: var(--lib-green);
+  --bs-btn-active-bg: var(--lib-green);
+  --bs-btn-active-border-color: var(--lib-green);
+}
+
+/* Cards */
+.card {
+  border-color: var(--lib-border);
+}
+
+.book-card {
+  height: 100%;
+}
+
+.book-cover {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: var(--lib-border);
+}
+
+.form-card {
+  max-width: 760px;
+}
+
+/* Dashboard stat cards */
+.stat-card {
+  border-top: 4px solid var(--lib-green);
+}
+
+.stat-available {
+  border-top-color: var(--lib-available);
+}
+
+.stat-borrowed {
+  border-top-color: var(--lib-borrowed);
+}
+
+.stat-overdue {
+  border-top-color: var(--lib-red);
+}
+
+.stat-label {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.stat-number {
+  margin-bottom: 0.25rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Status badges */
+.badge-available {
+  background: var(--lib-available);
+}
+
+.badge-borrowed {
+  background: var(--lib-borrowed);
+}
+
+.badge-overdue {
+  background: var(--lib-red);
+}
+
+.badge-due-soon {
+  background: var(--lib-orange);
+}
+
+/* Overdue and due soon rows. Phase 2 adds these classes with JS. */
+.row-overdue > * {
+  --bs-table-bg: var(--lib-red-bg);
+  --bs-table-color: var(--lib-red);
+}
+
+.row-due-soon > * {
+  --bs-table-bg: var(--lib-orange-bg);
+  --bs-table-color: var(--lib-orange);
+}
+
+/* Grid view is the default. List view puts one book per row. */
+#book-list.list-view > .col {
+  width: 100%;
+}
+
+#book-list.list-view .book-card {
+  flex-direction: row;
+}
+
+#book-list.list-view .book-cover {
+  width: 110px;
+  flex-shrink: 0;
+  border-radius: var(--bs-card-inner-border-radius) 0 0 var(--bs-card-inner-border-radius);
+}

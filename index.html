@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard | Community Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header text-center py-4">
+      <div class="container">
+        <h1 class="display-6 mb-1">Community Library</h1>
+        <p class="lead mb-0">Find your next book. Discover something new.</p>
+      </div>
+    </header>
+
+    <!-- Shared navbar. It collapses on phones. -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Library</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#library-navigation"
+          aria-controls="library-navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="library-navigation">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="index.html">Dashboard</a>
+            <a class="nav-link" href="pages/catalog.html">Book Catalog</a>
+            <a class="nav-link" href="pages/my-books.html">My Books</a>
+            <a class="nav-link" href="pages/history.html">History</a>
+            <a class="nav-link" href="pages/cart.html">Cart</a>
+            <a class="nav-link" href="pages/add-book.html">Add Book</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-4">
+      <h2 class="h3 mb-3">Dashboard</h2>
+      <!-- Static numbers for Phase 1. Phase 2 updates them with updateStats(). -->
+      <div class="row g-3">
+        <div class="col-6 col-lg-3">
+          <div class="card stat-card h-100">
+            <div class="card-body">
+              <p class="stat-label">Total Books</p>
+              <p class="stat-number" id="stat-total">30</p>
+              <p class="card-text small text-body-secondary">Books in the catalog.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="card stat-card stat-available h-100">
+            <div class="card-body">
+              <p class="stat-label">Available</p>
+              <p class="stat-number" id="stat-available">27</p>
+              <p class="card-text small text-body-secondary">Books ready to borrow.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="card stat-card stat-borrowed h-100">
+            <div class="card-body">
+              <p class="stat-label">Borrowed</p>
+              <p class="stat-number" id="stat-borrowed">3</p>
+              <p class="card-text small text-body-secondary">Books checked out now.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="card stat-card stat-overdue h-100">
+            <div class="card-body">
+              <p class="stat-label">Overdue</p>
+              <p class="stat-number" id="stat-overdue">1</p>
+              <p class="card-text small text-body-secondary">Books past their due date.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2 mt-4">
+        <a class="btn btn-primary" href="pages/catalog.html">Browse the Catalog</a>
+        <a class="btn btn-outline-primary" href="pages/my-books.html">See My Books</a>
+      </div>
+    </main>
+
+    <footer class="site-footer text-center py-4 mt-4">
+      <p class="mb-0">Community Library · CS 212 Group Project</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

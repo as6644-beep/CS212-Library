@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Borrowing History | Community Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header text-center py-4">
+      <div class="container">
+        <h1 class="display-6 mb-1">Community Library</h1>
+        <p class="lead mb-0">Find your next book. Discover something new.</p>
+      </div>
+    </header>
+
+    <!-- Shared navbar. It collapses on phones. -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Library</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#library-navigation"
+          aria-controls="library-navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="library-navigation">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../index.html">Dashboard</a>
+            <a class="nav-link" href="./catalog.html">Book Catalog</a>
+            <a class="nav-link" href="./my-books.html">My Books</a>
+            <a class="nav-link active" aria-current="page" href="./history.html">History</a>
+            <a class="nav-link" href="./cart.html">Cart</a>
+            <a class="nav-link" href="./add-book.html">Add Book</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-4">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <h2 class="h3 mb-0">Borrowing History</h2>
+        <button type="button" id="clear-history-btn" class="btn btn-outline-danger">Clear History</button>
+      </div>
+      <!-- Newest first. Phase 2 fills this from saved data. -->
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Book</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nov 14, 2026</td>
+              <td>Little Women</td>
+              <td><span class="badge badge-available">Returned</span></td>
+            </tr>
+            <tr>
+              <td>Nov 12, 2026</td>
+              <td>Pride and Prejudice</td>
+              <td><span class="badge badge-borrowed">Borrowed</span></td>
+            </tr>
+            <tr>
+              <td>Nov 10, 2026</td>
+              <td>The Secret Garden</td>
+              <td><span class="badge badge-available">Returned</span></td>
+            </tr>
+            <tr>
+              <td>Nov 5, 2026</td>
+              <td>The Hobbit</td>
+              <td><span class="badge badge-borrowed">Borrowed</span></td>
+            </tr>
+            <tr>
+              <td>Oct 31, 2026</td>
+              <td>Little Women</td>
+              <td><span class="badge badge-borrowed">Borrowed</span></td>
+            </tr>
+            <tr>
+              <td>Oct 28, 2026</td>
+              <td>Frankenstein</td>
+              <td><span class="badge badge-borrowed">Borrowed</span></td>
+            </tr>
+            <tr>
+              <td>Oct 27, 2026</td>
+              <td>The Secret Garden</td>
+              <td><span class="badge badge-borrowed">Borrowed</span></td>
+            </tr>
+            <tr>
+              <td>Oct 20, 2026</td>
+              <td>The Time Machine</td>
+              <td><span class="badge badge-available">Returned</span></td>
+            </tr>
+            <tr>
+              <td>Oct 6, 2026</td>
+              <td>The Time Machine</td>
+              <td><span class="badge badge-borrowed">Borrowed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer class="site-footer text-center py-4 mt-4">
+      <p class="mb-0">Community Library · CS 212 Group Project</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

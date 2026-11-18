@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Catalog | Community Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header text-center py-4">
+      <div class="container">
+        <h1 class="display-6 mb-1">Community Library</h1>
+        <p class="lead mb-0">Find your next book. Discover something new.</p>
+      </div>
+    </header>
+
+    <!-- Shared navbar. It collapses on phones. -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Library</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#library-navigation"
+          aria-controls="library-navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="library-navigation">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../index.html">Dashboard</a>
+            <a class="nav-link active" aria-current="page" href="./catalog.html">Book Catalog</a>
+            <a class="nav-link" href="./my-books.html">My Books</a>
+            <a class="nav-link" href="./history.html">History</a>
+            <a class="nav-link" href="./cart.html">Cart</a>
+            <a class="nav-link" href="./add-book.html">Add Book</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-4">
+      <h2 class="h3 mb-3">Book Catalog</h2>
+
+      <!-- Search, filter, sort, and view controls. Phase 2 makes them work. -->
+      <div class="row g-3 align-items-end mb-3">
+        <div class="col-12 col-md-5">
+          <label for="book-search" class="form-label">Search by title, author, or genre</label>
+          <input id="book-search" class="form-control" type="search" placeholder="Search books..." />
+        </div>
+        <div class="col-6 col-md-3">
+          <label for="genre-filter" class="form-label">Genre</label>
+          <select id="genre-filter" class="form-select">
+            <option value="all">All genres</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Classic">Classic</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Gothic">Gothic</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Science Fiction">Science Fiction</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-2">
+          <label for="book-sort" class="form-label">Sort books</label>
+          <select id="book-sort" class="form-select">
+            <option value="title">Title: A-Z</option>
+            <option value="author">Author: A-Z</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-2">
+          <span class="form-label d-block">View</span>
+          <div class="btn-group w-100" role="group" aria-label="Catalog view">
+            <button type="button" id="grid-view-btn" class="btn btn-outline-primary active" aria-pressed="true">Grid</button>
+            <button type="button" id="list-view-btn" class="btn btn-outline-primary" aria-pressed="false">List</button>
+          </div>
+        </div>
+      </div>
+
+      <p id="book-count" class="text-body-secondary" role="status">Loading books...</p>
+
+      <!-- loadBooks() in js/index.js fills this with one card per book. -->
+      <div id="book-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3"></div>
+
+      <!-- Borrow confirmation modal. Sample values for Phase 2 to replace. -->
+      <div class="modal fade" id="borrow-modal" tabindex="-1" aria-labelledby="borrow-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title h5" id="borrow-modal-title">Confirm Borrow</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <dl class="row mb-0">
+                <dt class="col-5">Book</dt>
+                <dd class="col-7" id="modal-book-title">The Time Machine</dd>
+                <dt class="col-5">Borrow date</dt>
+                <dd class="col-7" id="modal-borrow-date">Nov 18, 2026</dd>
+                <dt class="col-5">Due date</dt>
+                <dd class="col-7" id="modal-due-date">Dec 2, 2026</dd>
+              </dl>
+              <p class="small text-body-secondary mb-0 mt-2">Books are due 14 days after borrowing.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" id="confirm-borrow-btn" data-bs-dismiss="modal">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer text-center py-4 mt-4">
+      <p class="mb-0">Community Library · CS 212 Group Project</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../js/index.js"></script>
+  </body>
+</html>
